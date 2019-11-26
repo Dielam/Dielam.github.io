@@ -12,7 +12,6 @@ sc = SparkContext(conf=conf)
 RDDvar = sc.textFile("Gasolineras.csv")
 wanted = sys.argv[1]
 #CP = 7
-#split = RDDvar.map(lambda line: line.split(','))
 decode = RDDvar.map(lambda line: line.encode("ascii", "ignore"))
 text = decode.filter(lambda line: wanted == line.split(',')[6]) 
 #precio_gasolina_95 = 12
