@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#John Ibarra
 
 import sys
 from pyspark import SparkContext
