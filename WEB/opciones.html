@@ -57,7 +57,7 @@
 								<p>En el argumento "codigoPostal" debemos escribir el número correspondiente para el que queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un entero correcto, ya que de no ser así, se produciría un error. </p>
 								<h4>Salida del programa</h4>
 								<p>La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta sobre cada tipo de combustible. Para consultar el precio deseado:.</p>
-								<pre><code>$ cat output/"nombreCarpetaCombustible"*</code></pre>
+								<pre><code>$ cat output/"nombreCarpetaCombustible"/*</code></pre>
 								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
 								<pre><code>$ ls output/</code></pre>
 							<a href="#MediaEMP"></a>
@@ -66,9 +66,13 @@
 						<!-- Media comb por empresa -->
 							<section id="MediaEMP">
 								<h3>Media de precio de cada combustible por Empresa</h3>
-								<p>.</p>
+								<p><pre><code>$ spark-submit spark_media_empresa.py "nombreEmpresa" </code></pre></p>
+								<p>En el argumento "nombreEmpresa" debemos escribir el nombre de la empresa que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. En caso de querer consultar las empresas sin rótulo, el argumento tendrá que ser "(SIN RÓTULO)". De no cumplir lo establecido, se producirá un error.</p>
 								<h4>Salida del programa</h4>
-								<p>.</p>
+								<p>La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta sobre cada tipo de combustible. Para consultar el precio deseado:.</p>
+								<pre><code>$ cat output/"nombreCarpetaCombustible"/*</code></pre>
+								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
+								<pre><code>$ ls output/</code></pre>
 							<a href="#MediaLOC"></a>	
 							</section>
 
@@ -76,11 +80,25 @@
 
 							<section id="MediaLOC">
 								<h3>Media de precio de cada combustible por Localidad</h3>
-								<p>.</p>
+								<p><pre><code>$ spark-submit spark_media_localidad.py "localidad" </code></pre></p>
+								<p>En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.</p>
 								<h4>Salida del programa</h4>
-								<p>.</p>
-							<a href="#MediaLOC"></a>	
+								<p>La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta sobre cada tipo de combustible. Para consultar el precio deseado:.</p>
+								<pre><code>$ cat output/"nombreCarpetaCombustible"/*</code></pre>
+								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
+								<pre><code>$ ls output/</code></pre>
+							<a href="#ListaPorCP"></a>	
 							</section>
+
+						<!-- Lista de gasolineras por CP -->
+						
+							<section id="ListaPorCP">
+								<h3>Listado de gasolineras por Código Postal</h3>
+								<p><pre><code>$ spark-submit spark_listar_cp.py "codigoPostal" </code></pre></p>
+								<p>En el argumento "codigoPostal" debemos escribir el número correspondiente para el que queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un entero correcto, ya que de no ser así, se produciría un error. </p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada output, para consultar esta información:</p>
+								<pre><code>$ cat output/listaPorCP/*</code></pre>
 
 			<!-- Footer -->
 				<footer id="footer">
