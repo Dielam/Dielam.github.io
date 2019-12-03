@@ -34,8 +34,8 @@ def generar(line):
 
 if path.exists("outputMax"):
     rmtree("outputMax")
-else:
-    os.mkdir("outputMax")
+
+os.mkdir("outputMax")
 
 if len(sys.argv) > 1:
 
@@ -49,7 +49,7 @@ if len(sys.argv) > 1:
     localidadRDD = localidadRDD.filter(lambda rows: localidad == rows[5])
     localidadRDD = localidadRDD.map(lambda rows: (rows[2], rows[5], rows[7], rows[8], rows[9],rows[10], rows[11], rows[12], rows[13], rows[14], rows[15], rows[16], rows[17], rows[18], rows[19], rows[20], rows[21], rows[22], rows[23], rows[24]))
 
-    os.mkdir("outputMax/gasolina_95")
+    os.mkdir("outputMax/maximo_localidad_gasolina_95.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[6])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -58,11 +58,11 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/gasolina_95/media.txt", "w+")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_gasolina_95.txt/max.txt", "w+")
+        f.write(texto+"n")
         f.close()
 
-    os.mkdir("outputMax/gasoleo_A")
+    os.mkdir("outputMax/maximo_localidad_gasoleo_a.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[7])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -71,11 +71,11 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/gasoleo_A/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_gasoleo_a.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
-    os.mkdir("outputMax/gasoleo_B")
+    os.mkdir("outputMax/maximo_localidad_gasoleo_b.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[8])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -84,11 +84,11 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/gasoleo_B/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_gasoleo_b.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
-    os.mkdir("outputMax/bioetanol")
+    os.mkdir("outputMax/maximo_localidad_bioetanol.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[9])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -97,11 +97,11 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/bioetanol/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_bioetanol.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
-    os.mkdir("outputMax/nuevo_gasoleo_A")
+    os.mkdir("outputMax/maximo_localidad_nuevo_gasoleo_a.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[10])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -110,11 +110,11 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/nuevo_gasoleo_A/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_nuevo_gasoleo_a.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
-    os.mkdir("outputMax/biodiesel")
+    os.mkdir("outputMax/maximo_localidad_biodiesel.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[11])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -123,12 +123,12 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/biodiesel/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_biodiesel.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
 
-    os.mkdir("outputMax/ether_metilico")
+    os.mkdir("outputMax/maximo_localidad_ester_metilico.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[12])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -137,12 +137,12 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/ether_metilico/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_ester_metilico.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
 
-    os.mkdir("outputMax/bioalcohol")
+    os.mkdir("outputMax/maximo_localidad_bioalcohol.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[13])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -151,12 +151,12 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/bioalcohol/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_bioalcohol.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
 
-    os.mkdir("outputMax/gasolina_98")
+    os.mkdir("outputMax/maximo_localidad_gasolina_98.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[14])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -165,12 +165,12 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/gasolina_98/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_gasolina_98.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
 
-    os.mkdir("outputMax/gas_n_comprimido")
+    os.mkdir("outputMax/maximo_localidad_gas_natural_comprimido.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[15])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -179,12 +179,12 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/gas_n_comprimido/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_gas_natural_comprimido.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
 
-    os.mkdir("outputMax/gas_n_licuado")
+    os.mkdir("outputMax/maximo_localidad_gas_natural_licuado.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[16])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -193,12 +193,12 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/gas_n_licuado/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_gas_natural_licuado.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()
 
 
-    os.mkdir("outputMax/glp")
+    os.mkdir("outputMax/maximo_localidad_gas_licuados_del_petr.txt")
     datosRDD = localidadRDD.map(generar)
     ascenRDD = datosRDD.map(lambda rows: ([rows[18], float(rows[17])]))
     ascenRDD = ascenRDD.filter(lambda rows: rows[1] != 0)
@@ -207,8 +207,8 @@ if len(sys.argv) > 1:
     else:
         ascenRDD = ascenRDD.sortBy(lambda x: x[1], False, 1).first()
         texto = str(ascenRDD[0]) + ' ' + str(ascenRDD[1])
-        f = open("outputMax/glp/media.txt", "w")
-        f.write(texto)
+        f = open("outputMax/maximo_localidad_gas_licuados_del_petr.txt/max.txt", "w")
+        f.write(texto+"\n")
         f.close()        
 else:
     print "NO HA INTRODUCIDO LOCALIDAD"
