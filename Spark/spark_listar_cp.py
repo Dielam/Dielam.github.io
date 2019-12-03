@@ -5,6 +5,29 @@ from pyspark import SparkConf, SparkContext, SQLContext
 import string
 import sys
 
+def generar(line):
+    array = []
+    array.append(line[0])
+    array.append(line[1])
+    aux = line[2]
+    ini = 2
+    fin = 18
+
+    if aux != "I" and aux != "D" and aux != "N":
+        aux = line[3]
+        ini = 3
+        fin = 19
+
+    array.append(aux)
+    ini+=1
+    
+    for i in range(ini, fin):
+       if line[i] == '':
+           array.append("0")
+       else:
+           array.append(line[i])
+    return array
+
 if len(sys.argv) <= 1:
     print("Error. No ha introducido Codigo Postal.")
 else:
@@ -18,13 +41,16 @@ else:
         RDDvar = sc.textFile("Gasolineras.csv")
         wanted = sys.argv[1]
 
+        localidadRDD = localidadRDD.map(lambda rows: rows.split(","))
+        localidadRDD = localidadRDD.filter(lambda rows: localidad == rows[5])
+        localidadRDD = localidadRDD.map(lambda rows: (rows[5], rows[7], rows[8], rows[9],rows[10], rows[11], rows[12], rows[13], rows[14], rows[15], rows[16], rows[17], rows[18], rows[19], rows[20], rows[21], rows[22], rows[23], rows[24]))
+
+        datosRDD = localidadRDD.map(generar)
+
         # CP = [6]
         decode = RDDvar.map(lambda line: line.encode("ascii", "ignore"))
         sample = decode.filter(lambda line: wanted == line.split(',')[6])
-        data = sample.map(lambda line: line.replace('\",', "DIRECCION"))
-        text = sample.map(lambda line: line.replace('\",', "DIRECCION"))
-        data = data.map(lambda line: (line.split(',')[13].replace(' ',"0")))
-        result2 = text.map(lambda line: (int(line.split(',')[6]),str(line.split(',')[5]),str(line.split(',')[23]),float(line.split(',')[11]),float(line.split(',')[12])))
+        result = text.map(lambda line: (int(line.split(',')[6]),str(line.split(',')[5]),str(line.split(',')[23]),float(line.split(',')[11]),float(line.split(',')[12])))
         result = result2.union(data)
         result.saveAsTextFile("outputTest/lista_cp.txt")
         # Cambiamos los espacios vacios por 0
