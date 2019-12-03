@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Guia de uso</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Editar esto</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html" class="button primary">Inicio</a></li>
+							<li>
+								<a href="#" class="button primary">Proyecto</a>
+								<ul>
+									<li><a href="left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="dataset.html">Dataset</a></li>
+									<li><a href="herramientas.html">Herramientas</a></li>
+									<li><a href="guiauso.html">Guia de uso</a>
+										<ul>
+											<li><a href="opciones.html"> Opciones de ejecución</a></li>
+										</ul>
+									</li>
+									<li><a href="resultados.html">Resultados</a></li>
+									<li>
+										<a href="#">Submenu</a>
+										<ul>
+											<li><a href="#">Option 1</a></li>
+											<li><a href="#">Option 2</a></li>
+											<li><a href="#">Option 3</a></li>
+											<li><a href="#">Option 4</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="elements.html" class="button primary">Elements (para eliminar)</a></li>
+							<li><a href="index.html#repositorio" class="button primary">Repositorio</a></li>
+							<li><a href="index.html#miembros" class="button primary">Miembros</a></li>
+							<li><a href="index.html#contacto" class="button primary">Contacto</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Guia de uso del programa</h2>
+							<p></p>
+						</header>
+
+						<!-- Content -->
+							<section id="content">
+								<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+								<h2>Preparación del programa</h2>
+								<p>Tenemos 2 formas de ejecutar las opciones del programa, en modo local, y a través de una instancia de Amazon
+								Web Services. A continuación, se explica como utilizar cada una de ellas.</p>
+								<h3>Modo local</h3>
+								<p>Si queremos ejecutar este programa en modo local, ya sea en vuestro sistema operativo Linux Ubuntu o en
+								Windows pero a través de una máquina virtual de Ubuntu (con VirtualBox, por ejemplo), es necesario tener instalado en nuestro equipo Spark en modo local, si no lo tienes o no sabes como hacerlo, aquí tienes un tutorial para conseguirlo.</p>
+
+								<h4>Instalación Spark en nuestra máquina Ubuntu</h4>
+								<p>Aunque pensemos que podemos tener todo instalado, si no estamos correctamente seguros, realizaremos los siguientes
+								pasos:<br>
+								Primero, instalaremos Java, ya que es necesario para arrancar Apache Spark</p>
+								<pre><code>$ sudo apt-get update
+$ sudo apt install default-jdk</code></pre>
+								<p>Después, será necesarior instalar Scala y comprobar la correcta instalación y version.
+								<pre><code>$ sudo apt-get install scala
+$ scala -version
+Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPF</code></pre>
+								<p>Tras esto, instalaremos Python</p>
+								<pre><code>$ sudo apt-get install python</code></pre>
+								<p>Para comprobar la instalación, ejecutamos:</p>
+								<pre><code>$ python -h</code></pre>
+								<p>Por último, instalamos Spark</p>
+								<pre><code>$ sudo curl -o http://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz
+$ sudo tar xvf ./spark-2.2.0-bin-hadoop2.7.tgz
+$ sudo mkdir /usr/local/spark
+$ sudo cp -r spark-2.2.0-bin-hadoop2.7/* /usr/local/spark</code></pre>
+								<p>Puede ser que nuestra máquina no reconozca el comando curl, en este caso, procederemos a instalarlo
+								y a continuación, volveremos a realizar el paso anterior</p>
+								<pre><code>$ sudo apt install curl</code></pre>
+
+								<p>También tendrás que instalar el paquete Pandas, que puedes conseguir mediante estos comandos</p>
+								<h3>Amazon Web Services</h3>
+								<p>.</p>
+								<ul>
+									<li>Faucibus orci lobortis ac adipiscing integer.</li>
+									<li>Col accumsan arcu mi aliquet placerat.</li>
+									<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
+									<li>Blandit massa non blandit tempor interdum.</li>
+									<li>Lacinia mattis arcu nascetur lobortis.</li>
+								</ul>
+
+							<h2>Opciones de ejecución</h2>
+							<p>Todas estas, son las opciones que nuestro programa procesará, selecciona una para saber como ejecutarla</p>
+							<br>
+							<ul class="actions">
+							<li><a href="opciones.html#MediaCP" class="button">Media de precio de cada combustible por código postal</a></li>
+							</ul>
+							<ul class="actions">
+							<li><a href="opciones.html#MediaEMP" class="button">Media de precio de cada combustible por empresa</a></li>
+							</ul>
+							<ul class="actions">
+							<li><a href="opciones.html#MediaLOC" class="button">Media de precio de cada combustible por localidad</a></li>
+							</ul>
+							<ul class="actions">
+							<li><a href="opciones.html" class="button">Media de precio de cada combustible por código postal</a></li>
+							</ul>
+							</section>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
