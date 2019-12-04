@@ -99,6 +99,20 @@
 								<h4>Salida del programa</h4>
 								<p>La información obtenida se encontrará en una carpeta llamada output, para consultar esta información:</p>
 								<pre><code>$ cat output/listaPorCP/*</code></pre>
+							<a href="#ListaPorLoc"></a>
+							</section>
+
+						<!-- Lista de gasolineras por CP -->
+						
+							<section id="ListaPorLoc">
+								<h3>Listado de gasolineras en una Localidad</h3>
+								<p><pre><code>$ spark-submit spark_busqueda_localidad.py "localidad" </code></pre></p>
+								<p>En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.</p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada output, para consultar esta información:</p>
+								<pre><code>$ cat output/listaPorCP/*</code></pre>
+							<a href="#"></a>
+							</section>
 
 			<!-- Footer -->
 				<footer id="footer">
