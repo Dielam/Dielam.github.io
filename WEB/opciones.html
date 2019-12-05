@@ -98,21 +98,76 @@
 								<p>En el argumento "codigoPostal" debemos escribir el número correspondiente para el que queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un entero correcto, ya que de no ser así, se produciría un error. </p>
 								<h4>Salida del programa</h4>
 								<p>La información obtenida se encontrará en una carpeta llamada output, para consultar esta información:</p>
-								<pre><code>$ cat output/listaPorCP/*</code></pre>
+								<pre><code>$ cat output/lista_cp.txt/*</code></pre>
 							<a href="#ListaPorLoc"></a>
 							</section>
 
-						<!-- Lista de gasolineras por CP -->
+						<!-- Lista de gasolineras por Localidad -->
 						
 							<section id="ListaPorLoc">
 								<h3>Listado de gasolineras en una Localidad</h3>
-								<p><pre><code>$ spark-submit spark_busqueda_localidad.py "localidad" </code></pre></p>
+								<p><pre><code>$ spark-submit spark_listar_localidad.py "localidad" </code></pre></p>
 								<p>En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.</p>
 								<h4>Salida del programa</h4>
 								<p>La información obtenida se encontrará en una carpeta llamada output, para consultar esta información:</p>
-								<pre><code>$ cat output/listaPorCP/*</code></pre>
+								<pre><code>$ cat output/lista_localidad.txt/*</code></pre>
+							<a href="#ListaPorEmp"></a>
+							</section>
+
+						<!-- Lista de gasolineras por Empresa -->
+
+							<section id="ListaPorEmp">
+								<h3>Listado de gasolineras pertenecientes a una Empresa</h3>
+								<p><pre><code>$ spark-submit spark_listar_empresa.py "empresa" </code></pre></p>
+								<p>En el argumento "empresa" debemos escribir el nombre de la empresa que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.</p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada output, para consultar esta información:</p>
+								<pre><code>$ cat output/lista_empresa.txt/*</code></pre>
+							<a href="#MaxCP"></a>
+							</section>
+
+						<!-- Precio maximo en un código postal -->
+
+							<section id="MaxCP">
+								<h3>Precio máximo de cada combustible a partir de un Código Postal</h3>
+								<p><pre><code>$ spark-submit spark_precio_maximo_cp.py "codigoPostal" </code></pre></p>
+								<p>En el argumento "codigoPostal" debemos escribir el número correspondiente para el que queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un entero correcto, ya que de no ser así, se produciría un error.</p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta información:</p>
+								<pre><code>$ cat outputMax/"nombreCarpetaCombustible"/*</code></pre>
+								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
+								<pre><code>$ ls output/</code></pre>
+							<a href="#MaxLOC"></a>
+							</section>
+
+						<!-- Precio maximo en un código postal -->
+
+							<section id="MaxLOC">
+								<h3>Precio máximo de cada combustible a partir de una Localidad</h3>
+								<p><pre><code>$ spark-submit spark_precio_maximo_localidad.py "localidad" </code></pre></p>
+								<p>En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.</p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta información:</p>
+								<pre><code>$ cat outputMax/"nombreCarpetaCombustible"/*</code></pre>
+								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
+								<pre><code>$ ls output/</code></pre>
+							<a href="#MaxEMP"></a>
+							</section>
+
+						<!-- Precio maximo en un código postal -->
+
+							<section id="MaxEMP">
+								<h3>Precio máximo de cada combustible en una Empresa</h3>
+								<p><pre><code>$ spark-submit spark_precio_maximo_empresa.py "empresa" </code></pre></p>
+								<p>En el argumento "empresa" debemos escribir el nombre de la empresa que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.</p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta información:</p>
+								<pre><code>$ cat outputMax/"nombreCarpetaCombustible"/*</code></pre>
+								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
+								<pre><code>$ ls output/</code></pre>
 							<a href="#"></a>
 							</section>
+
 
 			<!-- Footer -->
 				<footer id="footer">
