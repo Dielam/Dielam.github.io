@@ -140,7 +140,7 @@
 							<a href="#MaxLOC"></a>
 							</section>
 
-						<!-- Precio maximo en un código postal -->
+						<!-- Precio maximo en una localidad -->
 
 							<section id="MaxLOC">
 								<h3>Precio máximo de cada combustible a partir de una Localidad</h3>
@@ -154,7 +154,7 @@
 							<a href="#MaxEMP"></a>
 							</section>
 
-						<!-- Precio maximo en un código postal -->
+						<!-- Precio maximo de una empresa -->
 
 							<section id="MaxEMP">
 								<h3>Precio máximo de cada combustible en una Empresa</h3>
@@ -163,6 +163,48 @@
 								<h4>Salida del programa</h4>
 								<p>La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta información:</p>
 								<pre><code>$ cat outputMax/"nombreCarpetaCombustible"/*</code></pre>
+								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
+								<pre><code>$ ls output/</code></pre>
+							<a href="#MinCP"></a>
+							</section>
+
+						<!-- Precio minimo en un código postal -->
+
+							<section id="MinCP">
+								<h3>Precio mínimo de cada combustible a partir de un Código Postal</h3>
+								<p><pre><code>$ spark-submit spark_precio_minimo_cp.py "codigoPostal" </code></pre></p>
+								<p>En el argumento "codigoPostal" debemos escribir el número correspondiente para el que queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un entero correcto, ya que de no ser así, se produciría un error.</p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta información:</p>
+								<pre><code>$ cat outputMin/"nombreCarpetaCombustible"/*</code></pre>
+								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
+								<pre><code>$ ls output/</code></pre>
+							<a href="#MinLOC"></a>
+							</section>
+
+						<!-- Precio minimo en una localidad -->
+
+							<section id="MinLOC">
+								<h3>Precio mínimo de cada combustible a partir de una Localidad</h3>
+								<p><pre><code>$ spark-submit spark_precio_minimo_localidad.py "localidad" </code></pre></p>
+								<p>En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.</p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta información:</p>
+								<pre><code>$ cat outputMin/"nombreCarpetaCombustible"/*</code></pre>
+								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
+								<pre><code>$ ls output/</code></pre>
+							<a href="#MinEMP"></a>
+							</section>
+
+						<!-- Precio minimo de una empresa -->
+
+							<section id="MinEMP">
+								<h3>Precio máximo de cada combustible en una Empresa</h3>
+								<p><pre><code>$ spark-submit spark_precio_minimo_empresa.py "empresa" </code></pre></p>
+								<p>En el argumento "empresa" debemos escribir el nombre de la empresa que queremos consultar, para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, símbolos y acentos ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.</p>
+								<h4>Salida del programa</h4>
+								<p>La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta información:</p>
+								<pre><code>$ cat outputMin/"nombreCarpetaCombustible"/*</code></pre>
 								<p>Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:</p>
 								<pre><code>$ ls output/</code></pre>
 							<a href="#"></a>
