@@ -17,7 +17,6 @@ else:
 
     # empresa = [23]
     decode = RDDvar.map(lambda line: line.encode("ascii", "ignore"))
-    sample = decode.map(lambda line: line.replace('\",', "DIRECCION"))
     text = sample.filter(lambda line: wanted == line.split(',')[23])
 
     # precio_gasolina_95 = [11]
