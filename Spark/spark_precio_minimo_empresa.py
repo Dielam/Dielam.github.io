@@ -9,7 +9,7 @@ if len(sys.argv) <= 1:
     print("Error. No ha introducido un Empresa correcta.")
 else:
     #Spark configuration
-    conf = SparkConf().setMaster('local').setAppName('MinPriceEmpresa')
+    conf = SparkConf().setAppName('MinPriceEmpresa')
     sc = SparkContext(conf=conf)
 
     RDDvar = sc.textFile("Gasolineras.csv")

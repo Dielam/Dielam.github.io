@@ -18,7 +18,7 @@ else:
         print("Error. No ha introducido un Codigo Postal correcto.")
     else:
         #Spark configuration
-        conf = SparkConf().setMaster('local').setAppName('AveragePriceCP')
+        conf = SparkConf().setAppName('AveragePriceCP')
         sc = SparkContext(conf=conf)
 
         RDDvar = sc.textFile("Gasolineras.csv")
