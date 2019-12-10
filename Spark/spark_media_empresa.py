@@ -15,7 +15,7 @@ if len(sys.argv) <= 1:
     print("Error. No ha introducido Empresa.")
 else:
     #Spark configuration
-    conf = SparkConf().setMaster('local').setAppName('AveragePriceCP')
+    conf = SparkConf().setAppName('AveragePriceCP')
     sc = SparkContext(conf=conf)
 
     RDDvar = sc.textFile("Gasolineras.csv")

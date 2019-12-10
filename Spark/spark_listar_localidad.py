@@ -42,7 +42,7 @@ if len(sys.argv) <= 1:
     print("Error. No ha introducido Localidad.")
 else:
     #Spark configuration
-    conf = SparkConf().setMaster('local').setAppName('ListLocalidad')
+    conf = SparkConf().setAppName('ListLocalidad')
     sc = SparkContext(conf=conf)
 
     RDDvar = sc.textFile("Gasolineras.csv")
