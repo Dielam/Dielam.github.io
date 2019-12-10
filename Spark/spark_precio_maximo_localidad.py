@@ -6,6 +6,9 @@ from shutil import rmtree
 import os
 import os.path as path
 
+if path.exists("outputMax"):
+    rmtree("outputMax")
+
 def generar(line):
     array = []
     array.append(line[0]) #ID

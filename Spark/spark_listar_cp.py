@@ -1,9 +1,15 @@
 #!/usr/bin/python
 #Diego Laguna
 
-from pyspark import SparkConf, SparkContext, SQLContext
+from pyspark import SparkConf, SparkContext
+from shutil import rmtree
 import string
 import sys
+import os
+import os.path as path
+
+if path.exists("outputLista"):
+    rmtree("outputLista")
 
 def generar(line):
     array = []

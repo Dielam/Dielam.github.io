@@ -1,9 +1,12 @@
 #!/usr/bin/python
 #Diego Laguna
 
-from pyspark import SparkConf, SparkContext, SQLContext
+from pyspark import SparkConf, SparkContext
+from shutil import rmtree
 import string
 import sys
+import os
+import os.path as path
 
 def generar(line):
     array = []
@@ -31,6 +34,9 @@ def generar(line):
        else:
            array.append(line[i])
     return array
+
+if path.exists("outputLista"):
+    rmtree("outputLista")
 
 if len(sys.argv) <= 1:
     print("Error. No ha introducido Localidad.")

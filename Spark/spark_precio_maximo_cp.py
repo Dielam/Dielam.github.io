@@ -2,8 +2,14 @@
 #Diego Laguna
 
 from pyspark import SparkConf, SparkContext
+from shutil import rmtree
 import string
 import sys
+import os
+import os.path as path
+
+if path.exists("outputMax"):
+    rmtree("outputMax")
 
 if len(sys.argv) <= 1:
     print("Error. No ha introducido Codigo Postal.")
@@ -20,7 +26,7 @@ else:
 
         # CP = [6]
         decode = RDDvar.map(lambda line: line.encode("ascii", "ignore"))
-        sample = decode.filter(lambda line: wanted == line.split(',')[6])
+        text = decode.filter(lambda line: wanted == line.split(',')[6])
 
         # precio_gasolina_95 = [11]
         data = text.filter(lambda line: str(line.split(',')[11]) != '')
@@ -30,7 +36,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[11]))) #map (Empresa, precio_gasolina_95)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_gasolina_95.txt")
         # precio_gasoleo_a = [12]
@@ -41,7 +47,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[12]))) #map (Empresa, precio_gasoleo_a)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_gasoleo_a.txt")
         # precio_gasoleo_b = [13]
@@ -52,7 +58,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[13]))) #map (Empresa, precio_gasoleo_b)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_gasoleo_b.txt")
         # precio_bioetanol = [14]
@@ -63,7 +69,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[14]))) #map (Empresa, precio_bioetanol)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_bioetanol.txt")
         # precio_nuevo_gasoleo_a = [15]
@@ -74,7 +80,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[15]))) #map (Empresa, precio_nuevo_gasoleo_a)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_nuevo_gasoleo_a.txt")
         # precio_biodiesel = [16]
@@ -85,7 +91,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[16]))) #map (Empresa, precio_biodiesel)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_biodiesel.txt")
         # f__ester_metilico = [17]
@@ -96,7 +102,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[17]))) #map (Empresa, precio_ester_metilico)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_ester_metilico.txt")
         # f__bioalcohol = [18]
@@ -107,7 +113,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[18]))) #map (Empresa, bioalcohol)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_bioalcohol.txt")
         # precio_gasolina_98 = [19]
@@ -118,7 +124,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[19]))) #map (Empresa, precio_gasolina_98)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_gasolina_98.txt")
         # precio_gas_natural_comprimido = [20]
@@ -129,7 +135,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[20]))) #map (Empresa, precio_gas_natural_comprimido)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_gas_natural_comprimido.txt")
         # precio_gas_natural_licuado = [21]
@@ -140,7 +146,7 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[21]))) #map (Empresa, precio_gas_natural_licuado)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_gas_natural_licuado.txt")
         # precio_gases_licuados_del_petr = [22]
@@ -151,6 +157,6 @@ else:
         else:
             precio = data.map(lambda line: (str(line.split(',')[23]),float(line.split(',')[22]))) #map (Empresa, precio_gases_licuados_del_petr)
             union = precio.sortBy(lambda line: line[1])
-            result = sc.parallelize(union.max())
+            result = sc.parallelize(union.min())
 
             result.saveAsTextFile("outputMax/maximo_cp_gases_licuados_del_petr.txt")

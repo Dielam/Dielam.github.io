@@ -2,8 +2,14 @@
 #Diego Laguna
 
 from pyspark import SparkConf, SparkContext
+from shutil import rmtree
 import string
 import sys
+import os
+import os.path as path
+
+if path.exists("output"):
+    rmtree("output")
 
 if len(sys.argv) <= 1:
     print("Error. No ha introducido Empresa.")
@@ -17,7 +23,7 @@ else:
 
     # empresa = [23]
     decode = RDDvar.map(lambda line: line.encode("ascii", "ignore"))
-    text = sample.filter(lambda line: wanted == line.split(',')[23])
+    text = decode.filter(lambda line: wanted == line.split(',')[23])
 
     # precio_gasolina_95 = [11]
     data = text.filter(lambda line: str(line.split(',')[11]) != '')

@@ -2,8 +2,14 @@
 #Diego Laguna
 
 from pyspark import SparkConf, SparkContext
+from shutil import rmtree
 import string
 import sys
+import os
+import os.path as path
+
+if path.exists("outputMin"):
+    rmtree("outputMin")
 
 if len(sys.argv) <= 1:
     print("Error. No ha introducido Codigo Postal.")
@@ -20,7 +26,7 @@ else:
 
         # CP = [6]
         decode = RDDvar.map(lambda line: line.encode("ascii", "ignore"))
-        sample = decode.filter(lambda line: wanted == line.split(',')[6])
+        text = decode.filter(lambda line: wanted == line.split(',')[6])
 
         # precio_gasolina_95 = [11]
         data = text.filter(lambda line: str(line.split(',')[11]) != '')
