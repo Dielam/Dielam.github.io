@@ -4,7 +4,7 @@ from pyspark import SparkConf, SparkContext
 import string
 import sys
 import csv
-
+import os
 
 
 if len(sys.argv) <= 1:
@@ -12,14 +12,22 @@ if len(sys.argv) <= 1:
 else:
 
     #Spark configuration
-    conf = SparkConf().setMaster('local').setAppName('JoinCVS')
+    conf = SparkConf().setAppName('MergeCVS')
     sc = SparkContext(conf=conf)
+    found = False;
+
+    #compruebo que csvSemanal existe
+
+    if os.path.exists("/csvSemanal.csv"):
+        found = True
+       
 
     csvFinal = open("csvSemanal.csv", 'a')
-    for i in sys.argv:
-    	csvAux = open(i) 
-    	csvAux.next() #ignoro el header
-    	for line in csvAux:
-    		csvFinal.write(line)
-    	csvAux.close()
+    for i in sys.argv[1:]:
+    	csvAux = open(i)
+        if found == True:
+    	   csvAux.next() #ignoro el header
+    	for row in csvAux:
+    		csvFinal.write(row)
+   	csvAux.close()
     csvFinal.close()
