@@ -81,19 +81,34 @@ $ sudo cp -r spark-2.2.0-bin-hadoop2.7/* /usr/local/spark</code></pre>
 								y a continuación, volveremos a realizar el paso anterior</p>
 								<pre><code>$ sudo apt install curl</code></pre>
 
-								<p>También tendrás que instalar el paquete Pandas, que puedes conseguir mediante estos comandos</p>
+								<p>También tendrás que instalar los paquete Pandas, Numpy y unicodecsv, que puedes conseguir mediante estos comandos</p>
+								<pre><code>$ sudo apt-get install python-pip
+$ sudo pip install numpy
+$ sudo pip install pandas
+$ sudo pip install unicodecsv</code></pre>
+
 								<h3>Amazon Web Services</h3>
-								<p>.</p>
-								<ul>
-									<li>Faucibus orci lobortis ac adipiscing integer.</li>
-									<li>Col accumsan arcu mi aliquet placerat.</li>
-									<li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-									<li>Blandit massa non blandit tempor interdum.</li>
-									<li>Lacinia mattis arcu nascetur lobortis.</li>
-								</ul>
+								<p>Para ejecutar la aplicación mediante un clúster, será necesario iniciar un clúster con Spark en Hadoop a través de Amazon AWS. Después de iniciar el clúster, instalaremos Pandas, Numpy y unicodecsv igual que para la ejecución en modo local, esta vez sin sudo:</p>
+																<pre><code>$ sudo apt-get install python-pip
+$ pip install numpy
+$ pip install pandas
+$ pip install unicodecsv</code></pre>
+								<p>En caso de aparecer un error con el comando pip, tendremos que actualizarlo:</p>
+								<pre><code>$ pip install --upgrade pip</code></pre>
+								<p>Al estar ejecutando la aplicación en un clúster, los comandos cambian, para ejecutar cualquier opcion, lo haremos de la siguiente forma (donde N y M son los número que queramos poner):</p>
+								<pre><code>$ spark-submit --num-executors N --executor-cores M "script"</code></pre>
+								<p>Una vez ejecutado el script, necesitamos obtener la carpeta de salida del hadoop file system, para ello:</p>
+								<pre><code>$ hadoop fs -get "nombreDirectorioSalida"</code></pre>
+								<p>Si queremos volver a ejecutar el mismo código con otras opciones habría que borrar los ficheros de salida generados en la ejecución anterior, para ello, utilizamos los siguientes comandos:</p>
+								<pre><code>$ hadoop fs -rm -r "nombreDirectorioSalida"</code></pre>
+								<p>Para consultar los directorios:</p>
+								<pre><code>$ hadoop fs -ls</code></pre>
+
 
 							<h2>Opciones de ejecución</h2>
-							<p>Todas estas, son las opciones que nuestro programa procesará, selecciona una para saber como ejecutarla</p>
+							<p>Antes de seleccionar cualquiera de las opciones que nuestro programa procesará, será necesario descargar el csv de ese día, para ello, debe ejecutar:</p>
+							<pre><code>$ spark-submit spark_descargarCSV.py</code></pre>
+							<p>Ahora si, selecciona una opción para saber como ejecutarla</p>
 							<br>
 							<ul class="actions">
 							<li><a href="opciones.html#MediaCP" class="button">Media de precio de cada combustible por Código Postal</a></li>
