@@ -60,7 +60,7 @@ proyecto.
 Como está explicado anteriormente en el apartado de herramientas, hemos utilizado GitHub para
 el repositorio de nuestro código fuente y todo lo relacionado con el proyecto.
 
-Dataset
+-Dataset
 
 El dataset sobre el que trabajaremos para realizar el estudio, contiene información de más de
 10.000 gasolineras de toda España, además está actualizado diariamente, lo que supondrá que
@@ -126,6 +126,7 @@ comunidad global de contribuyentes, mediante el lenguaje de programación Java. 
 el mayor contribuyente al proyecto, y usa Hadoop extensivamente en su negocio.
 
 -Github
+
 GitHub es una forja (plataforma de desarrollo colaborativo) para alojar proyectos utilizando el
 sistema de control de versiones Git. Se utiliza principalmente para la creación de código fuente
 de programas de ordenador. El software que opera GitHub fue escrito en Ruby on Rails. Desde
@@ -186,6 +187,7 @@ instalarlo y a continuación, volveremos a realizar el paso anterior
 $ sudo apt install curl
 
 -Modo Amazon Web Services
+
 Para ejecutar la aplicación mediante un clúster, será necesario iniciar un clúster con Spark en
 Hadoop a través de Amazon AWS. Después de iniciar el clúster, instalaremos Pandas, Numpy y
 unicodecsv igual que para la ejecución en modo local, esta vez sin sudo:
