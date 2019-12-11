@@ -1,11 +1,8 @@
+# Dielam.github.io
 Proyecto curso 2019-2020
 Estudio de gasolineras de España para la
 asignatura Cloud y Big Data en la Universidad
 Complutense de Madrid.
-
-# Dielam.github.io
-WEB: https://dielam.github.io/WEB/
-
 Alvaro Antón Garcia
 
 Gonzalo Figueroa del Val
@@ -15,6 +12,8 @@ Joel Garcia Aparicio
 John Erik Ibarra Guerrón
 
 Diego Laguna Martin
+
+WEB: https://dielam.github.io/WEB/
 
 
 Descripción del Proyecto:
