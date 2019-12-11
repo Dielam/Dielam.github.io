@@ -1,0 +1,1 @@
+ < ?php header("Location: https://dielam.github.io/WEB/"); ?>
