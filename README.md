@@ -7,9 +7,13 @@ Complutense de Madrid.
 WEB: https://dielam.github.io/WEB/
 
 Alvaro Antón Garcia
+
 Gonzalo Figueroa del Val
+
 Joel Garcia Aparicio
+
 John Erik Ibarra Guerrón
+
 Diego Laguna Martin
 
 Descripción del Proyecto:
