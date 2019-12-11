@@ -13,12 +13,14 @@ John Erik Ibarra Guerrón
 
 Diego Laguna Martin
 
+
 WEB: https://dielam.github.io/WEB/
 
 
 Descripción del Proyecto:
 
 -Objetivos y Datos
+
 Este proyecto consiste en un estudio de mercado de las gasolineras de toda España 	 	 	
 permitiendo al usuario manejar diversas variables en cuanto a gasolineras se refiere, 	 	 	
 desde los distintos tipos de combustible hasta la localización de estas gasolineras y otros 	 	
@@ -27,28 +29,35 @@ Los datos que manejaremos han sido obtenidos del portal opendata.esri.es, un por
 abiertos que ofrece datasets de todo tipo de materias.
 
 -Big Data
+
 Big Data consiste en un gran volumen de datos, estructurados o no. Vamos a manejar una gran
 cantidad de información que nos permitirá ofrecer unos resultados fiables y precisos respecto al
 estudio que realizamos. Gracias al procesamiento paralelo a gran escala, el procesamiento de
 estos datos será veloz
 
 -Herramientas
+
 Utilizaremos diferentes herramientas para el testeo local, la ejecución en clúster y el repositorio de
 los datos.
 
 -Repositorio
+
 Como está explicado anteriormente en el apartado de herramientas, hemos utilizado GitHub para
 el repositorio de nuestro código fuente y todo lo relacionado con el proyecto.
 
 -Guia de uso
+
 En el siguiente apartado encontrarás una descripción del código realizado. Además, habrá
 también una guía con todo lo necesario para ejecutar cada una de las funciones de nuestro
 proyecto.
 
 -Resultados
+
 Como está explicado anteriormente en el apartado de herramientas, hemos utilizado GitHub para
 el repositorio de nuestro código fuente y todo lo relacionado con el proyecto.
+
 Dataset
+
 El dataset sobre el que trabajaremos para realizar el estudio, contiene información de más de
 10.000 gasolineras de toda España, además está actualizado diariamente, lo que supondrá que
 quien utilice nuestra aplicación, estará siempre consultando información en vigor con datos
