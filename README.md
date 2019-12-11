@@ -234,6 +234,7 @@ queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un ent
 ya que de no ser así, se produciría un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta
 sobre cada tipo de combustible. Para consultar el precio deseado:
 
@@ -253,6 +254,7 @@ y acentos ortográficos correspondientes. En caso de querer consultar las empres
 argumento tendrá que ser "(SIN RÓTULO)". De no cumplir lo establecido, se producirá un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta
 sobre cada tipo de combustible. Para consultar el precio deseado:
 
@@ -271,6 +273,7 @@ para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, 
 ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta
 sobre cada tipo de combustible. Para consultar el precio deseado:
 
@@ -289,6 +292,7 @@ queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un ent
 ya que de no ser así, se produciría un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada output, para consultar esta
 información:
 
@@ -303,6 +307,7 @@ para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, 
 ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada output, para consultar esta
 información:
 
@@ -317,6 +322,7 @@ para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, 
 ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada outputLista, para consultar esta
 información:
 
@@ -331,6 +337,7 @@ queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un ent
 ya que de no ser así, se produciría un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta
 información:
 
@@ -349,6 +356,7 @@ para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, 
 ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta
 información:
 
@@ -367,6 +375,7 @@ para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, 
 ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta
 información:
 
@@ -385,6 +394,7 @@ queremos ejecutar la aplicación. Sobre entendemos que siempre escribimos un ent
 ya que de no ser así, se produciría un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta
 información:
 
@@ -403,6 +413,7 @@ para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, 
 ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta
 información:
 
@@ -421,6 +432,7 @@ para ello el nombre tendrá que estar escrito en mayúsculas, con los espacios, 
 ortográficos correspondientes. De no cumplir lo establecido, se producirá un error.
 
 Salida del programa
+
 La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta
 información:
 
