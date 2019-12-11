@@ -4,7 +4,7 @@ asignatura Cloud y Big Data en la Universidad
 Complutense de Madrid.
 
 # Dielam.github.io
-WEB: # https://dielam.github.io/WEB/
+WEB: https://dielam.github.io/WEB/
 
 Alvaro Antón Garcia
 Gonzalo Figueroa del Val
