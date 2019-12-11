@@ -78,6 +78,7 @@ Diferentes tipos de combustible (gasóleo a, gasolina sin plomo, biodiesel…).
 Herramientas:
 
 -Spark
+
 Apache Spark es un framework de computación en clúster open-source. Fue desarrollada
 originariamente en la Universidad de California, en el AMPLab de Berkeley. El código base del
 proyecto Spark fue donado más tarde a la Apache Software Foundation que se encarga de su
@@ -91,6 +92,7 @@ procesamiento de datos estructurados basada en SQL), MLlib para implementar mach
 learning, GraphX para el procesamiento de grafos y Spark Streaming.
 
 -Python
+
 Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en la legibilidad
 de su código
 Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos,
@@ -101,6 +103,7 @@ denominada Python Software Foundation License, que es compatible con la Licencia
 general de GNU a partir de la versión 2.1.1, e incompatible en ciertas versiones anteriores.
 
 -Amazon Web Services
+
 Amazon Web Services (AWS abreviado) es una colección de servicios de computación en la nube
 pública (también llamados servicios web) que en conjunto forman una plataforma de
 computación en la nube, ofrecidas a través de Internet por Amazon.com. Es usado en
@@ -114,6 +117,7 @@ procesamiento de los datos de gran volumen y respuesta de los mismos, mediante u
 un nodo master y dos nodos workers.
 
 -Hadoop
+
 Apache Hadoop es un framework de software que soporta aplicaciones distribuidas bajo una
 licencia libre. Permite a las aplicaciones trabajar con miles de nodos y petabytes de datos.
 Hadoop se inspiró en los documentos Google para MapReduce y Google File System (GFS).
@@ -136,6 +140,7 @@ Github.
 Preparación del programa:
 
 -Modo local
+
 Si queremos ejecutar este programa en modo local, ya sea en vuestro sistema operativo Linux
 Ubuntu o en Windows pero a través de una máquina virtual de Ubuntu (con VirtualBox, por
 ejemplo), es necesario tener instalado en nuestro equipo Spark en modo local, si no lo tienes o no
