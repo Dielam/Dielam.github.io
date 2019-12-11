@@ -161,6 +161,7 @@ Después, será necesarior instalar Scala y comprobar la correcta instalación y
 $ sudo apt-get install scala
 
 $ scala -version
+
 Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPF
 
 Tras esto, instalaremos Python
