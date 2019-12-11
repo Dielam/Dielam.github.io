@@ -132,58 +132,81 @@ Aunque pensemos que podemos tener todo instalado, si no estamos correctamente se
 realizaremos los siguientes pasos:
 
 Primero, instalaremos Java, ya que es necesario para arrancar Apache Spark
+
 $ sudo apt-get update
+
 $ sudo apt install default-jdk
 
 Después, será necesarior instalar Scala y comprobar la correcta instalación y version.
+
 $ sudo apt-get install scala
+
 $ scala -version
 Scala code runner version 2.11.12 -- Copyright 2002-2017, LAMP/EPF
 
 Tras esto, instalaremos Python
+
 $ sudo apt-get install python
+
 Para comprobar la instalación, ejecutamos:
+
 $ python -h
 
 Por último, instalamos Spark
+
 $ sudo curl -o http://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz
+
 $ sudo tar xvf ./spark-2.2.0-bin-hadoop2.7.tgz
+
 $ sudo mkdir /usr/local/spark
+
 $ sudo cp -r spark-2.2.0-bin-hadoop2.7/* /usr/local/spark
+
 Puede ser que nuestra máquina no reconozca el comando curl, en este caso, procederemos a
 instalarlo y a continuación, volveremos a realizar el paso anterior
+
 $ sudo apt install curl
 
 -Modo Amazon Web Services
 Para ejecutar la aplicación mediante un clúster, será necesario iniciar un clúster con Spark en
 Hadoop a través de Amazon AWS. Después de iniciar el clúster, instalaremos Pandas, Numpy y
 unicodecsv igual que para la ejecución en modo local, esta vez sin sudo:
+
 $ sudo apt-get install python-pip
+
 $ pip install numpy
+
 $ pip install pandas
+
 $ pip install unicodecsv
 
 En caso de aparecer un error con el comando pip, tendremos que actualizarlo:
+
 $ pip install --upgrade pip
 
 Al estar ejecutando la aplicación en un clúster, los comandos cambian, para ejecutar cualquier
 opcion, lo haremos de la siguiente forma (donde N y M son los número que queramos poner):
+
 $ spark-submit --num-executors N --executor-cores M “script"
 
 Una vez ejecutado el script, necesitamos obtener la carpeta de salida del hadoop file system,
 para ello:
+
 $ hadoop fs -get “nombreDirectorioSalida"
 
 Si queremos volver a ejecutar el mismo código con otras opciones habría que borrar los ficheros
 de salida generados en la ejecución anterior, para ello, utilizamos los siguientes comandos:
+
 $ hadoop fs -rm -r “nombreDirectorioSalida"
 
 Para consultar los directorios:
+
 $ hadoop fs -ls
 
 Opciones de ejecución:
 
 -Media de precio de cada combustible por Código Postal:
+
 $ spark-submit spark_media_CP.py "codigoPostal"
 
 En el argumento "codigoPostal" debemos escribir el número correspondiente para el que
@@ -193,12 +216,15 @@ ya que de no ser así, se produciría un error.
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta
 sobre cada tipo de combustible. Para consultar el precio deseado:
+
 $ cat output/“nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 -Media de precio de cada combustible por Empresa:
+
 $ spark-submit spark_media_empresa.py "nombreEmpresa"
 
 En el argumento "nombreEmpresa" debemos escribir el nombre de la empresa que queremos
@@ -209,12 +235,15 @@ argumento tendrá que ser "(SIN RÓTULO)". De no cumplir lo establecido, se prod
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta
 sobre cada tipo de combustible. Para consultar el precio deseado:
+
 $ cat output/“nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 -Media de precio de cada combustible por Localidad
+
 $ spark-submit spark_media_localidad.py "localidad"
 
 En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar,
@@ -224,12 +253,15 @@ ortográficos correspondientes. De no cumplir lo establecido, se producirá un e
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada output, donde existirá una carpeta
 sobre cada tipo de combustible. Para consultar el precio deseado:
+
 $ cat output/“nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 -Listado de gasolineras por Código Postal:
+
 $ spark-submit spark_listar_cp.py "codigoPostal"
 
 En el argumento "codigoPostal" debemos escribir el número correspondiente para el que
@@ -239,9 +271,11 @@ ya que de no ser así, se produciría un error.
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada output, para consultar esta
 información:
+
 $ cat output/listaPorCP/*
 
 -Listado de gasolineras en una Localidad:
+
 $ spark-submit spark_busqueda_localidad.py "localidad"
 
 En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar,
@@ -251,9 +285,11 @@ ortográficos correspondientes. De no cumplir lo establecido, se producirá un e
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada output, para consultar esta
 información:
+
 $ cat output/listaPorCP/*
 
 -Listado de gasolineras pertenecientes a una Empresa:
+
 $ spark-submit spark_listar_empresa.py "empresa"
 
 En el argumento "empresa" debemos escribir el nombre de la empresa que queremos consultar,
@@ -263,9 +299,11 @@ ortográficos correspondientes. De no cumplir lo establecido, se producirá un e
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada outputLista, para consultar esta
 información:
+
 $ cat outputLista/lista_empresa.txt/*
 
 -Precio máximo de cada combustible a partir de un Código Postal:
+
 $ spark-submit spark_precio_maximo_cp.py "codigoPostal"
 
 En el argumento "codigoPostal" debemos escribir el número correspondiente para el que
@@ -275,12 +313,15 @@ ya que de no ser así, se produciría un error.
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta
 información:
+
 $ cat outputMax/“nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 -Precio máximo de cada combustible a partir de una Localidad:
+
 $ spark-submit spark_precio_maximo_localidad.py "localidad"
 
 En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar,
@@ -290,12 +331,15 @@ ortográficos correspondientes. De no cumplir lo establecido, se producirá un e
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta
 información:
+
 $ cat outputMax/“nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 -Precio máximo de cada combustible en una Empresa:
+
 $ spark-submit spark_precio_maximo_empresa.py "empresa"
 
 En el argumento "empresa" debemos escribir el nombre de la empresa que queremos consultar,
@@ -305,12 +349,15 @@ ortográficos correspondientes. De no cumplir lo establecido, se producirá un e
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada outputMax, para consultar esta
 información:
+
 $ cat outputMax/“nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 -Precio mínimo de cada combustible a partir de un Código Postal:
+
 $ spark-submit spark_precio_minimo_cp.py "codigoPostal"
 
 En el argumento "codigoPostal" debemos escribir el número correspondiente para el que
@@ -320,12 +367,15 @@ ya que de no ser así, se produciría un error.
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta
 información:
+
 $ cat outputMin/“nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 -Precio mínimo de cada combustible a partir de una Localidad:
+
 $ spark-submit spark_precio_minimo_localidad.py "localidad"
 
 En el argumento "localidad" debemos escribir el nombre de la localidad que queremos consultar,
@@ -335,12 +385,15 @@ ortográficos correspondientes. De no cumplir lo establecido, se producirá un e
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta
 información:
+
 $ cat outputMin/“nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 -Precio máximo de cada combustible en una Empresa:
+
 $ spark-submit spark_precio_minimo_empresa.py "empresa"
 
 En el argumento "empresa" debemos escribir el nombre de la empresa que queremos consultar,
@@ -350,9 +403,11 @@ ortográficos correspondientes. De no cumplir lo establecido, se producirá un e
 Salida del programa
 La información obtenida se encontrará en una carpeta llamada outputMin, para consultar esta
 información:
+
 $ cat outputMin/"nombreCarpetaCombustible"/*
 
 Los nombres de las carpetas de los combustibles los podrás consultar con el siguiente comando:
+
 $ ls output/
 
 Conclusiones:
